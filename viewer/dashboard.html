@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AVALON - Multi-Agent Game Community</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Control Bar -->
+    <header id="control-bar">
+      <div class="logo-section">
+        <span class="logo-text">AVALON</span>
+        <span class="mode-label">LIVE</span>
+      </div>
+      <div class="control-section">
+        <button id="btn-start" class="ctrl-btn start-btn">&#9654; START</button>
+        <button id="btn-pause" class="ctrl-btn" disabled>&#9208; PAUSE</button>
+        <button id="btn-step" class="ctrl-btn" disabled>&#9197; STEP</button>
+        <button id="btn-stop" class="ctrl-btn" disabled>&#9209; STOP</button>
+      </div>
+      <div class="config-section">
+        <label>Games: <input type="number" id="input-num-games" value="1" min="1" max="100" class="config-input"></label>
+        <label><input type="checkbox" id="input-step-mode"> Step Mode</label>
+        <button id="btn-god-mode" class="ctrl-btn">&#x1F441; GOD</button>
+      </div>
+      <div class="status-section">
+        <span id="game-counter" class="game-counter">-</span>
+        <span id="connection-status" class="status-indicator disconnected">&#9679; OFFLINE</span>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div id="main-content">
+      <!-- Left: Game View -->
+      <div id="game-panel">
+        <!-- Info bar: round, score -->
+        <div id="info-bar">
+          <div class="info-item">
+            <span class="info-label">ROUND</span>
+            <span id="round-display" class="info-value">-</span>
+          </div>
+          <div class="info-item score-display">
+            <span id="good-score" class="score good-score">0</span>
+            <span class="score-sep">:</span>
+            <span id="evil-score" class="score evil-score">0</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">PHASE</span>
+            <span id="phase-display" class="info-value">IDLE</span>
+          </div>
+        </div>
+
+        <!-- Player area: circular layout -->
+        <div id="player-area">
+          <div id="round-table">
+            <span id="table-text">AVALON</span>
+          </div>
+          <!-- Player cards will be created dynamically by renderer -->
+        </div>
+      </div>
+
+      <!-- Right: Info Panels -->
+      <div id="info-panels">
+        <div id="panel-tabs">
+          <button class="tab active" data-panel="game-log">GAME</button>
+          <button class="tab" data-panel="agents">AGENTS</button>
+          <button class="tab" data-panel="learning">LEARNING</button>
+          <button class="tab" data-panel="stats">STATS</button>
+        </div>
+        <div id="panel-game-log" class="panel-content active">
+          <div id="game-history-section" class="history-section collapsed" style="display:none">
+            <div id="game-history-toggle" class="history-toggle">
+              <span class="toggle-icon">&#9654;</span>
+              <span class="toggle-text">Previous Games</span>
+              <span id="history-count" class="history-count">0</span>
+            </div>
+            <div id="game-history-list" class="history-list"></div>
+          </div>
+          <div id="game-log-content"></div>
+        </div>
+        <div id="panel-agents" class="panel-content">
+          <div id="agents-content"></div>
+        </div>
+        <div id="panel-learning" class="panel-content">
+          <div id="learning-content"></div>
+        </div>
+        <div id="panel-stats" class="panel-content">
+          <div id="cumulative-stats-section" class="stats-section">
+            <div class="section-title">Session Overview</div>
+            <div id="cumulative-stats-content">
+              <div class="empty-state">Start a game to see statistics</div>
+            </div>
+          </div>
+          <div id="win-rate-section" class="stats-section">
+            <div class="section-title">Win Rate</div>
+            <div id="win-rate-content"></div>
+          </div>
+          <div id="stats-content">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/pixel-art.js"></script>
+  <script src="js/websocket-client.js"></script>
+  <script src="js/dashboard-renderer.js"></script>
+  <script src="js/dashboard-app.js"></script>
+</body>
+</html>

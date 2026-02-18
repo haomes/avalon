@@ -1,0 +1,149 @@
+{
+  "game_config": {
+    "player_count": 6,
+    "mission_team_sizes": [2, 3, 4, 3, 4]
+  },
+  "players": [
+    {
+      "player_id": 0,
+      "player_name": "玩家1",
+      "role_id": "merlin",
+      "role_name_cn": "梅林",
+      "team": "good",
+      "known_evil": [3, 5],
+      "known_merlin_or_morgana": [],
+      "known_allies": []
+    },
+    {
+      "player_id": 1,
+      "player_name": "玩家2",
+      "role_id": "percival",
+      "role_name_cn": "派西维尔",
+      "team": "good",
+      "known_evil": [],
+      "known_merlin_or_morgana": [0, 3],
+      "known_allies": []
+    },
+    {
+      "player_id": 2,
+      "player_name": "玩家3",
+      "role_id": "loyal_servant_1",
+      "role_name_cn": "忠臣亚瑟",
+      "team": "good",
+      "known_evil": [],
+      "known_merlin_or_morgana": [],
+      "known_allies": []
+    },
+    {
+      "player_id": 3,
+      "player_name": "玩家4",
+      "role_id": "morgana",
+      "role_name_cn": "莫甘娜",
+      "team": "evil",
+      "known_evil": [],
+      "known_merlin_or_morgana": [],
+      "known_allies": [5]
+    },
+    {
+      "player_id": 4,
+      "player_name": "玩家5",
+      "role_id": "loyal_servant_2",
+      "role_name_cn": "忠臣凯",
+      "team": "good",
+      "known_evil": [],
+      "known_merlin_or_morgana": [],
+      "known_allies": []
+    },
+    {
+      "player_id": 5,
+      "player_name": "玩家6",
+      "role_id": "assassin",
+      "role_name_cn": "刺客",
+      "team": "evil",
+      "known_evil": [],
+      "known_merlin_or_morgana": [],
+      "known_allies": [3]
+    }
+  ],
+  "mission_records": [
+    {
+      "round_num": 1,
+      "team_leader_id": 2,
+      "team_members": [0, 2],
+      "team_votes": {"0": true, "1": true, "2": true, "3": true, "4": true, "5": false},
+      "team_approved": true,
+      "mission_votes": {"0": true, "2": true},
+      "success": true,
+      "speeches": {
+        "0": "大家好，我觉得我们应该先观察一下每个人的表现再做判断。这轮先组一个小队试试水。",
+        "1": "同意，第一轮很关键。我支持玩家3组的队，看起来比较稳妥。",
+        "2": "作为队长，我选择了自己和玩家1。我相信我们能完成任务。",
+        "3": "这个队伍看起来不错。我没有异议，先让他们出发吧。",
+        "4": "第一轮信息不多，先看看结果再说。同意出发。",
+        "5": "嗯，我也没什么意见，让他们去吧。"
+      }
+    },
+    {
+      "round_num": 2,
+      "team_leader_id": 0,
+      "team_members": [0, 1, 4],
+      "team_votes": {"0": true, "1": true, "2": true, "3": false, "4": true, "5": false},
+      "team_approved": true,
+      "mission_votes": {"0": true, "1": true, "4": true},
+      "success": true,
+      "speeches": {
+        "0": "第一轮任务成功了，说明我和玩家3都是好人。这轮我想带玩家2和玩家5。",
+        "1": "我支持玩家1的提议。我们好人应该尽快锁定三次任务成功。",
+        "2": "玩家1的推理有道理。第一轮成功确实证明了一些东西。",
+        "3": "我不太同意这个队伍，我觉得应该换一些人试试。总不能只相信几个人吧。",
+        "4": "我被选中了，我一定不会辜负大家的信任！",
+        "5": "这个队伍有点问题吧？为什么不带我？我觉得很不公平。"
+      }
+    },
+    {
+      "round_num": 3,
+      "team_leader_id": 3,
+      "team_members": [1, 2, 3, 5],
+      "team_votes": {"0": false, "1": false, "2": true, "3": true, "4": false, "5": true},
+      "team_approved": false,
+      "mission_votes": {},
+      "success": null,
+      "speeches": {
+        "0": "等一下，这个队伍有问题。我不认为玩家4和玩家6都是好人。大家小心投票。",
+        "1": "我也觉得这个队伍有风险。我建议否决这次组队。",
+        "2": "我被选中了所以我没什么意见，但是队伍里确实有些人我不确定。",
+        "3": "我是队长，我的判断是对的。玩家1和玩家2之前的发言太可疑了。",
+        "4": "我不在队伍里，但我不太放心。建议否决。",
+        "5": "我觉得玩家4的组队很合理啊，为什么你们这么排斥？"
+      }
+    },
+    {
+      "round_num": 3,
+      "team_leader_id": 4,
+      "team_members": [0, 1, 2, 4],
+      "team_votes": {"0": true, "1": true, "2": true, "3": false, "4": true, "5": false},
+      "team_approved": true,
+      "mission_votes": {"0": true, "1": true, "2": true, "4": true},
+      "success": true,
+      "speeches": {
+        "0": "这次的队伍我很满意。我们前两轮成功的人都在队里。一定能成功！",
+        "1": "对，这个组合非常合理。我们已经证明过自己了。",
+        "2": "支持！三次成功我们就赢了。",
+        "3": "又是老一套，你们几个总是互相选。这不公平。",
+        "4": "我作为队长选择了已经证明过的人。请大家投赞成。",
+        "5": "随便吧，反正你们也不会选我。"
+      }
+    }
+  ],
+  "mission_results": [true, true, true],
+  "good_wins_count": 3,
+  "evil_wins_count": 0,
+  "winner": "good",
+  "end_reason": "正义阵营完成三次任务且梅林存活！正义阵营获胜！",
+  "assassin_phase": {
+    "assassin_id": 5,
+    "target_id": 1,
+    "morgana_advice": "我观察了全场发言，玩家1和玩家2的推理都很精准。但玩家1在第一轮就表现得特别冷静且有洞察力，多次精准地质疑我和你。我认为玩家1最可能是梅林。不过玩家2对我们的判断也很准确，也有可能是派西维尔。综合考虑，我建议刺杀玩家2（派西维尔的可能性更大，因为他似乎知道谁是梅林一直在保护玩家1）。",
+    "merlin_killed": false
+  }
+}
